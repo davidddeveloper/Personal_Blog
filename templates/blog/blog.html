@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <header>
+        <div>
+            <h2>{{blog.title}}</h2>
+            <div class="blog-details">
+                <div class="read-time-date-posted">
+                    <p>{{blog.date_posted}} |</p>
+                    <p>{{blog.read_time}} minutes read</p>
+                </div>
+                <div>
+                    <ul class="tags">
+                        {% for tag in blog.tag.all %}
+                            {{tag.name}}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </header>
+    <main >
+        <div class="text-container">
+            <div class="blog-text">
+                {{blog.text|safe}}
+            </div>
+        </div>
+    </main>
+{% endblock %}
