@@ -13,9 +13,13 @@
     <header class="main container">
         <h1><a href="https://github.com/davidddeveloper">@davidddeveloper</a></h1>
         <ul>
-            <li><i class="fa fa-home" aria-hidden="true"></i></li>
+            <a style="color:black" href="{% url 'blogs' %}"><li><i class="fa fa-home" aria-hidden="true"></i></li></a>
         </ul>
     </header>
+    <section class="home">
+        {% block blogs %}
+        {% endblock %}
+    </section>
     <section class="container">
         {% block content %}
         {% endblock %}

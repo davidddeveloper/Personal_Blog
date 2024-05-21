@@ -2,7 +2,10 @@ from django.shortcuts import render, redirect, HttpResponseRedirect, HttpRespons
 from .models import Blog, Tag
 # Create your views here.
 def home(request):
-    return HttpResponse("Hello World!")
+    blogs = Blog.objects.all()
+    return render(request, 'blog/blog_home.html', {
+        'blogs': blogs
+    })
 
 def blog(request, name):
     blogs = Blog.objects.all()

@@ -175,14 +175,14 @@ hr {
 /* 348, 620 910 1220 */
 @media (min-width: 348px) {
     .container {
-        max-width: 348;
+        max-width: 348px;
         margin: 0 auto;
     }
 
 }
 @media (min-width: 620px) {
     .container {
-        max-width: 620;
+        max-width: 620px;
         margin: 0 auto;
     }
 
