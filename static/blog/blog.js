@@ -6,6 +6,54 @@ shareBtn = document.querySelector("#share-btn")
 twitterShare = document.querySelector("#twitter-share");
 instagramShare = document.querySelector("#instagram-share");
 
+/* toggle between light and dark-theme */
+/* using localstorage */
+
+let theme = localStorage.getItem('theme')
+if (theme == 'dark')
+{
+    body.classList.add(`${theme}-theme`)
+}
+else if (theme == 'white')
+{
+    body.classList.remove('dark-theme')
+}
+else
+{
+    body.classList.remove(`${theme}-theme`)
+}
+
+toogleThemeBtn = document.querySelector(".toogle-theme");
+toogleThemeBtn.addEventListener('click', () => {
+    let body = document.body;
+    let theme = localStorage.getItem('theme')
+
+    if (theme == null)
+    {
+        body.classList.add('dark-theme')
+        localStorage.setItem('theme', 'dark')
+    }
+    else if (theme == 'white')
+    {
+        body.classList.toggle('dark-theme')
+        localStorage.setItem('theme', 'dark')
+    }
+    else
+    {
+        body.classList.toggle(`${theme}-theme`)
+        localStorage.setItem('theme', 'white')
+    }
+
+    if (body.classList.contains('dark-theme'))
+    {
+        toogleThemeBtn.innerHTML = '☀'
+    }
+    else
+    {
+        toogleThemeBtn.innerHTML = '🌙'
+    }
+})
+
 console.log(texts);
 texts.forEach((text) => {
     text.addEventListener('mouseup', (e) => {

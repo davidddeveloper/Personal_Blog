@@ -10,6 +10,12 @@
     --white: rgb(255, 255, 255);
 }
 
+.dark-theme {
+    --bg-color: rgb(10, 10, 10);
+    --text-color: rgb(160, 160, 160);
+    --heading-color: rgb(255, 255, 255);
+}
+
 html {
     font-size: 62.5%; /*10px*/
 }
@@ -72,6 +78,10 @@ button {
     border: 0;
 }
 
+.fa-home {
+    color: var(--heading-color)
+}
+
 header.main {
     display: flex;
     justify-content: space-between;
@@ -129,6 +139,10 @@ hr {
     padding-left: 10px;
     flex-direction: column;
     gap: 8px;
+}
+
+.discover-more a {
+    color: var(--text-color);
 }
 
 .discover-more a:hover {
